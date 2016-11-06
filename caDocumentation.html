@@ -1,10 +1,84 @@
+<?
+$caCredits = "
+    <center><table align:'center'>
+      <tr>
+        <td><img src='http://www.jrj-socrates.com/Cartoon%20Pics/Misc/Tripping%20The%20Rift/Chode_300.gif' width='50px';height='48px'></td>
+        <td><strong>Andrew Zawadzki</strong></td>
+        <td>Main Development</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><strong>bonienl</strong></td>
+        <td>Additional Contributions</td>
+      </tr>
+      <tr>
+        <td><img src='http://fanart.tv/ftv_128.jpg' height='48px' width='48px'></td>
+        <td><strong>Kode</strong></td>
+        <td>Application Feed</td>
+      </tr>
+      <tr>
+        <td><img src='http://i.imgur.com/VFMJTol.jpg' width='48px' height='48px'></td>
+        <td><strong>Sparklyballs</strong></td>
+        <td>Additional Testing</td>
+      </tr>
+      <tr>
+        <td><img src='http://i.imgur.com/hpBxTJX.jpg' width='48px' height='48px'></td>
+        <td><strong>CHBMB</strong></td>
+        <td>Additional Testing</td>
+      </tr>
+    </table></center>
+    <br>
+    <center><em><font size='1'>Copyright 2015-2016 Andrew Zawadzki</font></em></center>
+    <center><a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7M7CBCVU732XG' target='_blank'><img src='https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif'></a></center>
+    <br><center><a href='http://lime-technology.com/forum/index.php?topic=40262.0' target='_blank'>Plugin Support Thread</a></center>
+  ";
+  $caCredits = str_replace("\n","",$caCredits);
 
+?>
+<style>
+
+.back-to-top {
+  background: none;
+  margin: 0;
+  position: fixed;
+  bottom: 50px;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  z-index: 100;
+  display: none;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+</style>
+<script>
+
+jQuery(document).ready(function() {
+  var offset = 250;
+  var duration = 500;
+  jQuery(window).scroll(function() {
+    if (jQuery(this).scrollTop() > offset) {
+      jQuery('.back-to-top').fadeIn(duration);
+    } else {
+      jQuery('.back-to-top').fadeOut(duration);
+    }
+  });
+
+  jQuery('.back-to-top').click(function(event) {
+    event.preventDefault();
+    jQuery('html, body').animate({scrollTop: 0}, duration);
+    return false;
+  })
+});
+
+</script>
 
 <center><strong><font size="4">Community Applications Manual</font></strong></center>
 
 <strong><font color="red">Note:</font> If any display abberations appear on unRaid's menu (ie: the Feedback, Help, Info, Log buttons are displaying over top of some of the menu tabs) then you should go to the unRaid's Display Settings and move the USERS tab to within Settings</strong><br><br>
 <br>
-<font size='4' color='red'>Index</font>
+<font size='4' color='red'>Index</font><br>
 <br>
 <font size='2' color='purple'><em>Community Applications (Apps Tab) Module</em></font><br>
 <a href='#overview'>OverView</a><br>
@@ -353,5 +427,5 @@ Beer costs money...  If you like CA (or any of my other plugins) feel free to co
 
 <strong>For any support issues with this plugin, go to <a href='http://lime-technology.com/forum/index.php?topic=40262.0' target='_blank'>Plugin Support Page</a>
 <a href="#" class="back-to-top" style="display: inline;">
-<img src='/plugins/community.applications/images/up.png' style='width:50px;height:50px' href="#" class="back-to-top"></img>
+<img src='https://github.com/Squidly271/community.applications/raw/master/source/community.applications/usr/local/emhttp/plugins/community.applications/images/up.png' style='width:50px;height:50px' href="#" class="back-to-top"></img>
 </a>
