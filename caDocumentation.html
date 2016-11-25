@@ -57,6 +57,7 @@ jQuery(document).ready(function() {
 <a href='#dockerHub'>Advanced - dockerHub Integration</a><br>
 <a href='#private'>Private Repositories</a><br>
 <a href='#settings'>General Settings</a><br>
+<a href='#optionalModules'>Optional CA Modules</a><br>
 <br>
 <font size='3' color='purple'><em>CA Auto Update Module</em></font><br>
 <a href='#autoupdate'>Auto Update Settings</a><br>
@@ -268,19 +269,30 @@ Enables/disables the displaying of 2 random apps of the day when entering the Ap
 This option enables the plugin to perform additional searches from dockerHub when looking for an application.  See above (Advanced - dockerHub integration for more details) Default: No
 <br>
 <br>
+<font color='red' size='3'><p id='optionalModules'>Optional CA Modules</p></font><br>
+<br>
+By clicking on <input type='button' value='CA Modules'> within the Apps tab, a list of currently installed / available additional modules for CA will be detailed.  Some of these optional modules come already packed with CA (but can be uninstalled separately if so desired).
+<br><br>
 <hr>
 <center><img src='https://github.com/Squidly271/ca.update.applications/raw/master/source/ca.update.applications/usr/local/emhttp/plugins/ca.update.applications/images/ca.update.applications.png' height='96px' width='96px'></center>
-<font color='purple' size='4'><center>CA Auto Update Module</center></font>
-<font color="red" size="3"><p id='autoupdate'>Auto Update Settings</p></font>
-Within the Community Applications section of <em>Settings</em> there is a program called "Auto Update Settings".  This program will allow your unRaid server to automatically update any or all of the plugin applications currently installed to the latest versions as they become available without any user intervention.
+<p id='autoupdate'></p><font color='purple' size='4'><center>CA Auto Update Module</center></font>
+<font color="red" size="3">Auto Update Settings</font>
+Within the Community Applications section of <em>Settings</em> there is a program called "Auto Update Settings".  This module will allow your unRaid server to automatically update any or all of the plugin or docker applications currently installed to the latest versions as they become available without any user intervention.
 <br>
-To utilize this option, then you must first configure the dynamix UI to check for plugin settings.  This is done via <em>Settings - Notification Settings - Plugin Version Notification</em>  Set this value to be whatever you desire (I recommend at least once per day).  Community Applications will then automatically install any available updates.  Note that you should still keep the Notifcation method of Browser / Email / Agents enabled simply to let unRaid inform you of any updates to the OS itself.  However if you keep Browser notifications active, you will still have to acknowledge the alert even if the plugin has already been updated by Community Applications.
-<br>
-unRaid's syslog will have some additional entries as Community Applications installs or skips (if the plugin is set to not autoupdate).
+There are two separate sections within this module: Plugin Settings and Docker Settings.<br><br>
+On both settings screens, you have the options to:<br>
 <br> 
 <font color='purple'><b>Send Notifications On Update</b></font><br> 
-Defaults to Yes.  This will send a notification whenever an application has been updated
+Defaults to Yes.  This will send a notification whenever an application has been updated<br>
 <br>
+<font color='purple'><b>Automatically update All Plugins|Dockers</b></font><br>
+Defaults to No.  When set to yes, all applications for that section (plugins / dockers) will be automatically updated.  When set to No, a list of the currently installed applications will appear and you will have the option to individually set them to auto update or not.
+<br>
+<font color='purple'><b>Update Frequency</b></font><br>
+Set this to whatever time frame you want the module to check for (and install) the updates.  Available options are Disabled, Daily, Weekly, Monthly and custom.  When set to Daily/Weekly/Monthly, you should fill out appropriately the Hour, Minute, etc that the check will actually be performed at.<br>
+Setting this to "Custom" will allow you to manually enter a standard cron entry for when to perform the updates for greater flexibility (wikipedia: <a href='https://en.wikipedia.org/wiki/Cron'>Cron</a>)<br>
+<br>
+Additionally, the plugin update settings also has this additional entry:<br>
 <font color='purple'><b>Delay In Days Before Updating Applications</b></font><br>
 Set this to the number of days after an application has been updated before autoupdating the application.  (Setting this to 0 will update the applications the same day they are released)  Defaults to 3 days. 
  <br>
