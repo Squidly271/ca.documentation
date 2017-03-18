@@ -61,6 +61,7 @@ jQuery(document).ready(function() {
 <br>
 <font size='3' color='purple'><em>CA Auto Update Module</em></font><br>
 <a href='#autoupdate'>Auto Update Settings</a><br>
+<a href='#dockerAdvancedControl'>Advanced Docker Control</a><br>
 <br>
 <font size='3' color='purple'><em>CA Appdata Backup/Restore Module</em></font><br>
 <a href='#backupSettings'>Backup Appdata Settings</a><br>
@@ -300,6 +301,15 @@ Set this to the number of days after an application has been updated before auto
  <br>
 <br><font color='red'><strong>Note:</strong></font> Community Applications will NOT automatically install any unRaid OS updates.
 <br>
+<p id='dockerAdvancedControl'></p><font color='red'><strong>Advanced Docker Control</strong></font><br>
+Optionally, CA Auto Update supports running custom stop and start scripts for docker applications.  These scripts will be executed <em>prior</em> to stopping an application and <em>after</em> starting an application.<br><br>
+To use this feature, create the following file(s) on your flash drive:<br>
+<dl>
+<dt>/boot/config/plugins/ca.update.applications/scripts/stopping/stop_all</dt><dd>This script will be executed whenever <em>any</em> docker application is being updated (prior to updating)</dd>
+<dt>/boot/config/plugins/ca.update.applications/scripts/stopping/{nameOfContainer}</dt><dd>This script will be executed whenever <em>{nameOfContainer}</em> is being updated (prior to updating)</dd>
+<dt>/boot/config/plugins/ca.update.applications/scripts/starting/{nameOfContainer}</dt><dd>This script will be executed whenever <em>{nameOfContainer}</em> has been updated</dd>
+<dt>/boot/config/plugins/ca.update.applications/scripts/starting/start_all</dt><dd>This script will be executed whenever <em>any</em> container has been updated</dd>
+</dl>
 <hr><p id='backup'></p>
 <br>
 <p id='backupSettings'></p><center><img src='https://github.com/Squidly271/ca.backup/raw/master/source/ca.backup/usr/local/emhttp/plugins/ca.backup/images/ca.backup.png' height='96px' width='96px'></center>
