@@ -199,9 +199,9 @@ Pinned applications can be viewed by pressing the <input type='button' value='Pi
 <br>
 <font size='3' color='red'><p id='monitor'>Resource Monitor</p></font>
 <br>
-The resource monitor will display some statistics on the currently running docker applications (% CPU, % Memory, Network Utilization).  Additionally, it will also calculate the size of the various application's appData.
+The orignal resource monitor was removed in favor of cAdvisor. cAdvisor will give detailed statistics (CPU utilization, ram, etc) of each of your dockers.
 <br>
-It also features cAdvisor integration.  If the cAdvisor application is not currently installed, a direct link to install it will be present (highly recommended to install it).  Once installed, clicking on each application's icon will take you directly to cAdvisor's page for that application which will display even more useful information about the application.
+Please install cAdvisor from the community applications page. The default configuration will listen on port 8081. Visit <YOUR.IP>:8081 to get all the details of your dockers.
 <br>
 <font size="3" color="red"><p id='dockerHub'>Advanced - dockerHub Integration</p></font>
 <br>
