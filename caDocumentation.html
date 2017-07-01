@@ -89,32 +89,13 @@ All items within this plugin have tooltips enabled to further guide you in opera
 
 After installation, a new tab will appear on unRaid's main menu called "Apps".  Additionally, there will be a section within the Settings tab called Community Applications which has some extra utilities to customize the operation of this plugin.
 <hr>
-To begin with, at the top of the page are the navigation buttons.  Clicking or hovering over these buttons will change the displayed results accordingly:
+To begin with, at the top of the page are the navigation buttons.  Clicking or hovering over these buttons will change the displayed results accordingly:<br>
 <img src='/plugins/community.applications/images/SectionIcon.png' height='50px'> - This chooses which "section" to display (Available Apps, Installed Apps, Previously Installed Apps, Pinned Apps, additional CA Modules<br>
 <img src='/plugins/community.applications/images/ViewIcon.png' height='50px'> - This chooses how to display the results<br>
 <img src='/plugins/community.applications/images/CategoryIcon.png' height='50px'> - This selects a category of apps to display<br>
 <img src='/plugins/community.applications/images/SubCategoryIcon.png' height='50px'> - When available, this selects a subcategory of apps to display<br>
 
-<font size="3" color="red"><p id='categories'>Categories</p></font>
 
-<br><br>
-<input class='allButtons' type=button id='backup' value='Backup' style='margin:0px'; onclick='getContent(false,"backup:","Backup",false);'></input>
-<input class='allButtons' type=button id='cloud' value='Cloud' style='margin:0px'; onclick='getContent(false,"cloud:","Cloud",false);'></input>
-<input class='allButtons' type=button id='downloaders' value='Downloaders' style='margin:0px'; onclick='getContent(false,"downloaders:","Downloaders",false);'></input>
-<input class='allButtons' type=button id='HomeAutomation' value='Home Automation' style='margin:0px'; onclick='getContent(false,"HomeAutomation:","Home Automation",false);'></input>
-<input class='allButtons' type=button value='Network Services' style='margin:0px'; onclick='getContent(false,"network:","All Network Services",false);'></input>
-<input class='allButtons' type=button value='Media Applications' style='margin:0px'; onclick='getContent(false,"MediaApp:","All Media Applications",false);'></input>
-<input class='allButtons' type=button value='Media Servers' style='margin:0px'; onclick='getContent(false,"MediaServer:","All Media Servers",false);'></input>
-<input class='allButtons' type=button id='productivity' value='Productivity' style='margin:0px'; onclick='getContent(false,"productivity:","Productivity",false);'></input>
-<input class='allButtons' type=button id='tools' value='Tools/Utilities' style='margin:0px'; onclick='getContent(false,"tools:","Tools / Utilities",false);'></input>
-<input class='allButtons' type=button id='other' value='Other' style='margin:0px'; onclick='getContent(false,"other:","Other",false);'></input>
-<input class='allButtons' type=button id='plugins' value='Plugins' style='margin:0px';></input>
-<span style='float:right'>
-<input class='allButtons' type=button id="New" style='margin:0px'; value='New/Updated' onclick='getContent(false,"New","New / Updated Applications",true);'></input>
-<input class='allButtons' type=button id="UNCATEGORIZED" style='margin:0px'; value='Uncategorized' onclick='getContent(false,"UNCATEGORIZED","All Uncategorized Applications",false);'></input>
-<input class='allButtons' type=button id="All" style='margin:0px'; value='All Applications' onclick='getContent(false,"All","All Applications",false);'></input>
-<input class='allButtons' type=button id='MainButton' style='margin:0px'; value='Back to unRaid Search' hidden onclick='backToSearch();'></input>
-</span>
 <hr>
 
 <font size="3" color="red"><p id='viewModes'>View Modes</p></font>
@@ -123,13 +104,13 @@ To begin with, at the top of the page are the navigation buttons.  Clicking or h
 <font size="3" color="red"><p id='displayed'>Displayed Results</p></font>
 
 After selecting a category (or searching),the applications will appear: (example from Icon Details Mode)
-
+<br><br>
 <img src='https://github.com/Squidly271/ca.documentation/raw/master/icondetails.png'>
 
 Clicking or hovering over the icon will bring up more details about the application.
 
-The following action icons may be available for any given application:
-
+The following action icons may be available for any given application:<br>
+<br>
 <img src='/plugins/community.applications/images/install.png' height='25px'><img src='/plugins/community.applications/images/edit.png' height='25px'><img src='/plugins/community.applications/images/update.png' height='25px'> - These icons respectively will <b>Install, Edit, or Update</b> an application<br>
 <img src='/plugins/community.applications/images/WebPage.png' height='25px'> - Clicking this icon will take you to an application's GUI<br>
 
@@ -138,16 +119,14 @@ The following action icons may be available for any given application:
 <br>
 At the top right of the page is a search box.  Enter a search string here to search for either an application's name, author's name, repository name, or description<br><br>
 <br>
-The <input type='button' value='Update Applications'> button forces an update of all available applications.  Community Applications normally downloads the updated application lists whenever entering it loads.  However, there is a delay of up to two hours before a new application may appear on the feed.  If you know that a new application is available, but it is not appearing, then you should Update the Applications if you want to use that particular application.
-<br>
 <hr>
 <br>
 <font size='3' color='red'><p id='previous'>Installed / Previously Installed Applications</p></font>
 <br>
-By selecting <input type='button' value='Installed Apps'></input> will display all applications which are currently installed, and allow you to edit them.<br>
+Selecting Installed Apps from the "Section" icon will display all applications which are currently installed, and allow you to edit them.<br>
 A <img src='https://github.com/limetech/webgui/raw/master/plugins/dynamix.docker.manager/images/remove.png' width='20px'></img> will appear next to the application.  Selecting this will allow you to uninstall the application, and optionally delete the appdata folder for the application (See <b>Settings</b> section)<br><br>
 <br>
-By selecting <input type='button' value='Previous Apps'></input> will display all applications which have been previously installed, and allow you to re-install them.<br>
+Selecting Previous Apps from the "Section" icon will display all applications which have been previously installed, and allow you to re-install them.<br>
 A <img src='https://github.com/limetech/webgui/raw/master/plugins/dynamix.docker.manager/images/remove.png' width='20px'></img> will appear next to the application.  Selecting this will remove (ie: delete the user template) from the list of previously installed applications<br><br>
 <hr>
 <font size='3' color='red'><p id='pinned'>Pinning Applications</p></font>
@@ -156,7 +135,7 @@ On any of the displays (with the exception of when dockerHub search results are 
 <br>
 Pressing the <img src='https://github.com/Squidly271/community.applications/raw/master/source/community.applications/usr/local/emhttp/plugins/community.applications/images/redButton.png' style='height:20px;width:20px;'> will pin the application whereas pressing the <img src='https://github.com/Squidly271/community.applications/raw/master/source/community.applications/usr/local/emhttp/plugins/community.applications/images/greenButton.png' style='height:20px;width:20px'> will unpin the application.<br>
 <br>
-Pinned applications can be viewed by pressing the <input type='button' value='Pinned Apps'> button.<br>
+Pinned applications can be viewed by selecting Pinned Apps from the "Section" Icon<br>
 <br>
 <br>
 <hr>
