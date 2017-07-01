@@ -53,7 +53,6 @@ jQuery(document).ready(function() {
 <a href='#searching'>Searching And Updating</a><br>
 <a href='#previous'>Installed / Previously Installed Applications</a><br>
 <a href='#pinned'>Pinning Applications</a><br>
-<a href='#monitor'>Resource Monitor</a><br>
 <a href='#dockerHub'>Advanced - dockerHub Integration</a><br>
 <a href='#private'>Private Repositories</a><br>
 <a href='#settings'>General Settings</a><br>
@@ -90,10 +89,14 @@ All items within this plugin have tooltips enabled to further guide you in opera
 
 After installation, a new tab will appear on unRaid's main menu called "Apps".  Additionally, there will be a section within the Settings tab called Community Applications which has some extra utilities to customize the operation of this plugin.
 <hr>
+To begin with, at the top of the page are the navigation buttons.  Clicking or hovering over these buttons will change the displayed results accordingly:
+<img src='/plugins/community.applications/images/SectionIcon.png' height='50px'> - This chooses which "section" to display (Available Apps, Installed Apps, Previously Installed Apps, Pinned Apps, additional CA Modules<br>
+<img src='/plugins/community.applications/images/ViewIcon.png' height='50px'> - This chooses how to display the results<br>
+<img src='/plugins/community.applications/images/CategoryIcon.png' height='50px'> - This selects a category of apps to display<br>
+<img src='/plugins/community.applications/images/SubCategoryIcon.png' height='50px'> - When available, this selects a subcategory of apps to display<br>
 
 <font size="3" color="red"><p id='categories'>Categories</p></font>
 
-To begin with, at the top of the page are the Category navigation buttons.  Clicking these buttons will display the recommended applications within the appropriate category.  Some of the categories (Network Services, Media Applications, and Media Servers) also have "sub-categories" to choose from.
 <br><br>
 <input class='allButtons' type=button id='backup' value='Backup' style='margin:0px'; onclick='getContent(false,"backup:","Backup",false);'></input>
 <input class='allButtons' type=button id='cloud' value='Cloud' style='margin:0px'; onclick='getContent(false,"cloud:","Cloud",false);'></input>
@@ -117,58 +120,19 @@ To begin with, at the top of the page are the Category navigation buttons.  Clic
 <font size="3" color="red"><p id='viewModes'>View Modes</p></font>
 
 
-These buttons change how the results are displayed.  Either displayed in a table, icons, or a combination of the two (Icon Details).  Additionally, you can sort the results by Name, Repository, Author, or Date Changed
-
-<center>
-<span id='sortButtons'>View Mode:
-<input type='button' class='viewButton' value='Tables' id='viewTable' onclick='changeSortOrder("viewTable");' style='margin:1px'>
-<input type='button' class='viewButton' value='Icon Details' id='viewDetail' onclick='changeSortOrder("viewDetail");' style='margin:1px'>
-<input type='button' class='viewButton' value='Icons' id='viewIcon' onclick='changeSortOrder("viewIcon");'  style='margin:1px'>
-Sort By:
-<input type='button' class='sortButton' id='Name' value='Name' onclick='changeSortOrder("Name");' style='margin:1px'>
-<input type='button' class='sortButton' id='RepoName' value='Repository' onclick='changeSortOrder("RepoName");' style='margin:1px'>
-<input type='button' class='sortButton' id='Author' value='Author' onclick='changeSortOrder("Author");' style='margin:1px'>
-<input type='button' class='sortButton' id='Date' value='Date' onclick='changeSortOrder("Date");' style='margin:1px'>
-Sort Direction:
-<input type='button' class='dirButton' id='Up' value='Ascending' onclick='changeSortOrder("Up");' style='margin:1px'>
-<input type='button' class='dirButton' id='Down' value='Descending' onclick='changeSortOrder("Down");' style='margin:1px'>
-</center></span>
-<span id='dockerButtons' hidden><center>View Mode:
-<input type='button' class='dockerView' id='dockerTable' value='Tables' onclick='changeDockerView("dockerTable");' style='margin:1px'>
-<input type='button' class='dockerView' id='dockerDetail' value='Icon Details' onclick='changeDockerView("dockerDetail");' style='margin:1px'>
-<input type='button' class='dockerView' id='dockerIcon' value='Icons' onclick='changeDockerView("dockerIcon");' style='margin:1px'></center></span>
-<hr>
-
 <font size="3" color="red"><p id='displayed'>Displayed Results</p></font>
 
-After selecting a category, the applications will appear: (example from Icon Details Mode)
-<br><br><br><br>
-<table><tr>
-<td><center>Author: <strong><a style='cursor:pointer'>limetech</a></strong><br>
-<center><a style='cursor:pointer'>Official Limetech Repository</a></center>
-<center><img src='https://github.com/Squidly271/community.applications/raw/master/source/community.applications/usr/local/emhttp/plugins/community.applications/images/redButton.png' style='height:15px;width:15px'></center>
-<figure><center><a><img src='http://d2631fvi2jdnb6.cloudfront.net/docker/limetech/plex.png' style='width:96px;height:96px'></a></center>
-<figcaption><strong><font size="3">PlexMediaServer</font></strong><img src='https://github.com/Squidly271/community.applications/raw/master/source/community.applications/usr/local/emhttp/plugins/community.applications/images/information.png'><img src='https://github.com/Squidly271/community.applications/raw/master/source/community.applications/usr/local/emhttp/plugins/community.applications/images/star.png' style='width:15px;height:15px;'></figcaption>
-<input type='button' value='Add' style='margin:2px'></td><td style='display:inline-block;width:350px;text-align:left'>
-<strong>Categories:</strong> MediaApp:Video MediaApp:Music MediaApp:Photos MediaServer:Video MediaServer:Music MediaServer:Photos<br><br>
-The Plex Media Server enriches your life by organizing all your personal media, presenting it beautifully and streaming it to all of your devices. It's easy to use, it's awesome, and it's free!
-<br><strong><center>Date Updated: August 9, 2015</center></strong>
-<br><br><center><font color='red'>Support Thread&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Project Home Page</font></center>
-</td></tr></table>
-<li>Clicking on the author (limetech) will display all other applications from that author.<br></li>
-<li>Clicking on the Repository (official Limetech Repository) will open a new tab in your browser with the Announcement thread for that repository<br></li>
-<li>Clicking on the Support Thread will open a new tab in your browser for the Support thread for that application<br></li>
-<li>Clicking on the Project Home Page will open a new tab in your browser for the Project's home page (in this example, http://plex.tv)<br></li>
-<li>Click on the application's icon to display more details about the application<br></li>
-<li>Click on <img src='https://github.com/Squidly271/community.applications/raw/master/source/community.applications/usr/local/emhttp/plugins/community.applications/images/information.png'> to display the application's change log<br></li>
-<li>The <img src='https://github.com/Squidly271/community.applications/raw/master/source/community.applications/usr/local/emhttp/plugins/community.applications/images/star.png' style='height:15px;width:15px'> will display if the application has been added or updated recently<br></li>
-<li>The <img src='https://github.com/Squidly271/community.applications/raw/master/source/community.applications/usr/local/emhttp/plugins/community.applications/images/red-star.png' style='height:15px;width:15px'> will display dockerHub's rating on the application (Note that in and by itself this does not mean that application "A" is better than application "B"</li>
-<li>Clicking <img src='https://github.com/Squidly271/community.applications/raw/master/source/community.applications/usr/local/emhttp/plugins/community.applications/images/greenButton.png' style='height:15px;width:15px'> or <img src='https://github.com/Squidly271/community.applications/raw/master/source/community.applications/usr/local/emhttp/plugins/community.applications/images/redButton.png' style='height:15px;width:15px'> will pin/unpin the application.  See <a href='#pinned'>HERE</a> for more details</li>
-<li>Selecting <input type='button' value='Add'> will take you to the Add Container screen where you can set any path mountings and install the application.<br></li>
-<li>Selecting <input type='button' value='Edit'> will allow you to change the settings of an already installed application.<br></li>
-<li>Selecting <input type='button' value='Default'> will allow you to reset the settings of an already installed application back to the author's default settings.<br></li>
-<li>Selecting <input type='button' value='Install Plugin'> will install the application / utility if it is a <i>Plugin</i><br></li>
-<li>Selecting <input type='button' value='Settings'>will take you to a plugin's Setting page (note: Not all plugins have a settings page)</br></li>
+After selecting a category (or searching),the applications will appear: (example from Icon Details Mode)
+
+<img src='https://github.com/Squidly271/ca.documentation/raw/master/icondetails.png'>
+
+Clicking or hovering over the icon will bring up more details about the application.
+
+The following action icons may be available for any given application:
+
+<img src='/plugins/community.applications/images/install.png' height='25px'><img src='/plugins/community.applications/images/edit.png' height='25px'><img src='/plugins/community.applications/images/update.png' height='25px'> - These icons respectively will <b>Install, Edit, or Update</b> an application<br>
+<img src='/plugins/community.applications/images/WebPage.png' height='25px'> - Clicking this icon will take you to an application's GUI<br>
+
 <br>
 <font size="3" color="red"><p id='searching'>Searching and Updating</p></font>
 <br>
@@ -196,12 +160,6 @@ Pinned applications can be viewed by pressing the <input type='button' value='Pi
 <br>
 <br>
 <hr>
-<br>
-<font size='3' color='red'><p id='monitor'>Resource Monitor</p></font>
-<br>
-The orignal resource monitor was removed in favor of cAdvisor. cAdvisor will give detailed statistics (CPU utilization, ram, etc) of each of your dockers.
-<br>
-Please install cAdvisor from the community applications page. The default configuration will listen on port 8081. Visit <YOUR.IP>:8081 to get all the details of your dockers.
 <br>
 <font size="3" color="red"><p id='dockerHub'>Advanced - dockerHub Integration</p></font>
 <br>
@@ -245,20 +203,11 @@ Within unRaid's Settings tab, there is a section called <em>Community Applicatio
 <font color="purple"><b>Time to display applications as new / updated</b></font><br>
 This option dictates the amount of time that a new or updated application will be flagged as new and displayed under the <strong>New / Updated</strong> category.  Defaults to 3 Months
 <br>
-<font color="purple"><b>Initial View Mode</b></font><br>
-This option sets the initial view mode when you first load the plugin.  Defaults to Icons
-<br>
 <font color="purple"><b>Favourite Repository</b></font><br>
 This option allows you to set a "favourite" repository.  If set, then applications from that repository will display before all others.  Defaults to None
 <br>
 <font color="purple"><b>Icon Size</b></font><br>
 This option only applies to view modes Icons and Icon Details.  It sets the displaying of the icons to be either large or small (Defaults to Large)
-<br>
-<font color="purple"><b>Number of Columns</b></font><br>
-This option only applies to Icon mode.  It will set the number of columns of applications displayed per line.  Useful on mobile devices.  Defaults to 5
-<br>
-<font color='purple'><b>Default Number Of Results Per Page</b></font><br>
-This option selects the number of search results displayed per page.  Note that if a favourite repository has been selected, then Community Applications will always display all search results on a page
 <br>
 <font color='purple'><b>Show already installed apps within available apps</b></font><br>
 By default, if an application has been installed, it will not appear within the available apps  (It will only show within Installed Apps).  Selected this will display the installed apps within the available apps lists
