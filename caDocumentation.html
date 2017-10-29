@@ -1,41 +1,4 @@
-<style>
 
-.back-to-top {
-  background: none;
-  margin: 0;
-  position: fixed;
-  bottom: 50px;
-  right: 0;
-  width: 70px;
-  height: 70px;
-  z-index: 100;
-  display: none;
-  text-decoration: none;
-  color: #ffffff;
-}
-
-</style>
-<script>
-
-jQuery(document).ready(function() {
-  var offset = 250;
-  var duration = 500;
-  jQuery(window).scroll(function() {
-    if (jQuery(this).scrollTop() > offset) {
-      jQuery('.back-to-top').fadeIn(duration);
-    } else {
-      jQuery('.back-to-top').fadeOut(duration);
-    }
-  });
-
-  jQuery('.back-to-top').click(function(event) {
-    event.preventDefault();
-    jQuery('html, body').animate({scrollTop: 0}, duration);
-    return false;
-  })
-});
-
-</script>
 NOTE: There may be differences in operation as described here and the actual plugin(s).  The documentation / help for the plugins lags behind the development of the plugins themselves.  The authorative details on new / different methods of using the plugins are always going to be the post detailing the release.<br><br>
 <center><img src='https://github.com/Squidly271/community.applications/raw/master/source/community.applications/usr/local/emhttp/plugins/community.applications/images/community.applications.png' height='96px' width='96px'></center>
 <center><strong><font size="4">Community Applications</font></strong></center>
