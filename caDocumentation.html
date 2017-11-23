@@ -51,20 +51,17 @@ All items within this plugin have tooltips enabled to further guide you in opera
 After installation, a new tab will appear on unRaid's main menu called "Apps".  Additionally, there will be a section within the Settings tab called Community Applications which has some extra utilities to customize the operation of this plugin.
 <hr>
 To begin with, at the top of the page are the navigation buttons.  Clicking or hovering over these buttons will change the displayed results accordingly:<br>
-<img src='/plugins/community.applications/images/SectionIcon.png' height='50px'> - This chooses which "section" to display (Available Apps, Installed Apps, Previously Installed Apps, Pinned Apps, additional CA Modules<br>
-<img src='/plugins/community.applications/images/ViewIcon.png' height='50px'> - This chooses how to display the results<br>
-<img src='/plugins/community.applications/images/CategoryIcon.png' height='50px'> - This selects a category of apps to display<br>
-<img src='/plugins/community.applications/images/SubCategoryIcon.png' height='50px'> - When available, this selects a subcategory of apps to display<br>
-
-
+<img src='/plugins/community.applications/images/SectionIconNew.png' height='50px'> - This chooses which "section" to display (Available Apps, Installed Apps, Previously Installed Apps, Pinned Apps, additional CA Modules<br>
+<img src='/plugins/community.applications/images/ViewIconNew.png' height='50px'> - This chooses how to display the results<br>
+<img src='/plugins/community.applications/images/CategoryIconNew.png' height='50px'> - This selects a category of apps to display<br>
+<img src='/plugins/community.applications/images/SubCategoryIconNew.png' height='50px'> - When available, this selects a subcategory of apps to display<br>
 <hr>
 <font size="3" color="red"><p id='displayed'>Displayed Results</p></font>
 
-
 After selecting a category (or searching),the applications will appear: (example from Icon Details Mode)
-
-<div style="display:block;overflow:hidden;"><div style="height:300px;overflow:auto;margin:0px;min-width:1887px;display:inline-block;"><div style="width:200px;float:left;display:inline-block;"><center>Author: <strong><a class="ca_tooltip tooltipstered" style="cursor:pointer" onclick="authorSearch(this.innerHTML);">linuxserver</a></strong></center><center><font size="1"><a class="ca_tooltip tooltipstered" href="http://lime-technology.com/forum/index.php?topic=42092.0" target="_blank">linuxserver's Repository <img src="http://i61.tinypic.com/id537n.png" height="20px"></a></font></center><center><i class="ca_tooltip fa fa-thumb-tack unpinned tooltipstered" onclick="pinApp(this,&quot;linuxserver/pydio&quot;);" aria-hidden="true"></i><i class="fa fa-star" style="font-size:15px; color:magenta;" aria-hidden="true"></i> <strong>22</strong></center><figure><center><a class="ca_appPopup tooltipstered" data-appnumber="134" style="cursor:pointer"><img src="https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/pydio-icon.png" onerror="this.src=&quot;/plugins/community.applications/images/question.png&quot;;" style="width:96px;height=96px;"></a></center><figcaption><strong><center><font size="3"><a class="ca_tooltip tooltipstered" data="" appnumber="134" style="cursor:pointer" onclick="mySearch(this.innerHTML);"><span style="background color:#FFFF66; color:#FF0000;font weight:bold;">pydio</span></a></font><br></center></strong></figcaption></figure><center><font color="red"></font></center><center></center></div><div style="display:inline-block;width:370px;text-align:left; float:left; overflow:auto;"><strong>Categories: </strong>Cloud, Network:Other<br><span class="desc_readmore" style="display:block"><font color="red"><br></font><span style="background-color:#FFFF66; color:#FF0000;font-weight:bold;">Pydio</span> (formerly AjaXplorer) is a mature open source software solution for file sharing and synchronization. With intuitive user interfaces (web / mobile / desktop), <span style="background-color:#FFFF66; color:#FF0000;font-weight:bold;">Pydio</span> provides enterprise-grade features to gain back control and privacy of your data: user directory connectors, legacy filesystems drivers, comprehensive admin interface, and much more.</span><br><center><a class="ca_tooltip tooltipstered" href="Apps/AddContainer?xmlTemplate=default:/tmp/community.applications/tempFiles/templates-community-apps/134.xml" target="_self"><img src="/plugins/community.applications/images/install.png" class="appIcons"></a></center><br><center><a class="ca_tooltip tooltipstered" href="http://lime-technology.com/forum/index.php?topic=42811" target="_blank"><font color="red">Support Thread</font></a>&nbsp;&nbsp;&nbsp;<a class="ca_tooltip tooltipstered" target="_blank" href="https://pyd.io/"><font color="red">Project Home Page</font></a>&nbsp;&nbsp;&nbsp;<a class="ca_tooltip tooltipstered" href="https://www.linuxserver.io/" target="_blank"><font color="red">Web Page</font></a><br><font size="0"><a class="ca_tooltip tooltipstered" href="https://www.linuxserver.io/donations/" target="_blank">Donate To Author</a></font></center><font></font></div></div><script>$('#updateButton').html('Legacy Mode');$('#updateButton').show();</script><font><br><br><br><br></font></div>
-
+<br><br>
+<img src='https://github.com/Squidly271/ca.documentation/raw/master/icondetails.png'><br>
+<br>
 Clicking or hovering over the icon will bring up more details about the application.<br><br>
 <img src='https://github.com/Squidly271/ca.documentation/raw/master/popup.png'><br>
 <br>
@@ -92,7 +89,7 @@ A <img src='https://github.com/limetech/webgui/raw/master/plugins/dynamix.docker
 <br>
 On any of the displays (with the exception of when dockerHub search results are shown), you can "pin" an application for later viewing.  This is useful for when you're just skimming through the lists and come across an application that you'd like to try but don't have the time to do it right away.<br>
 <br>
-Pressing the <img src='https://github.com/Squidly271/community.applications/raw/master/source/community.applications/usr/local/emhttp/plugins/community.applications/images/redButton.png' style='height:20px;width:20px;'> will pin the application whereas pressing the <img src='https://github.com/Squidly271/community.applications/raw/master/source/community.applications/usr/local/emhttp/plugins/community.applications/images/greenButton.png' style='height:20px;width:20px'> will unpin the application.<br>
+Pressing the <i class="ca_tooltip fa fa-thumb-tack tooltipstered" style='font-size:25px;color:red;padding:3px; -webkit-transform: rotate(20deg);-moz-transform: rotate(20deg);-ms-transform: rotate(20deg);-o-transform: rotate(20deg);transform: rotate(20deg);' aria-hidden="true"></i> will pin the application whereas pressing the <i class="ca_tooltip fa fa-thumb-tack tooltipstered" style='font-size:25px;color:green;padding:3px;' aria-hidden="true" title=""></i> will unpin the application.<br>
 <br>
 Pinned applications can be viewed by selecting Pinned Apps from the "Section" Icon<br>
 <br>
