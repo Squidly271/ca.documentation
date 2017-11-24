@@ -17,23 +17,8 @@ NOTE: There may be differences in operation as described here and the actual plu
 <a href='#dockerHub'>Advanced - dockerHub Integration</a><br>
 <a href='#private'>Private Repositories</a><br>
 <a href='#settings'>General Settings</a><br>
-<a href='#optionalModules'>Optional CA Modules</a><br>
 <br>
-<font size='3' color='purple'><em>CA Auto Update Module</em></font><br>
-<a href='#autoupdate'>Auto Update Settings</a><br>
-<a href='#dockerAdvancedControl'>Advanced Docker Control</a><br>
-<br>
-<font size='3' color='purple'><em>CA Appdata Backup/Restore Module</em></font><br>
-<a href='#backupSettings'>Backup Appdata Settings</a><br>
-<a href='#restoreAppdata'>Restoring your appdata settings</a><br>
-<br>
-<font size='3' color='purple'><em>CA Cleanup Appdata Module</em></font><br>
-<a href='#deleteAppdata'>Cleanup Appdata</a><br>
-<br>
-<font size='3' color='purple'><em>CA Docker Autostart Manager Module</em></font><br>
-<a href='#dockerAutostart'>Docker Autostart Manager</a><br>
-<br>
-<font size='3' color='purple'><em>Other</em></font><br>
+
 <a href='#othersettings'>Other Notes</a><br>
 <a href='#credits'>Credits</a><br>
 <a href='#beer'>Buy Me A Beer</a><br>
@@ -162,149 +147,6 @@ Enables/disables the displaying of 2 random apps of the day when entering the Ap
 This option enables the plugin to perform additional searches from dockerHub when looking for an application.  See above (Advanced - dockerHub integration for more details) Default: No
 <br>
 <hr>
-<font color='red' size='3'><p id='optionalModules'>Optional CA Modules</p></font><br>
-<br>
-By clicking on <input type='button' value='CA Modules'> within the Apps tab, a list of currently installed / available additional modules for CA will be detailed.  Some of these optional modules come already packed with CA (but can be uninstalled separately if so desired).  If an additional CA Module is not listed below, then it has its own dedicated Help files available within the app itself.
-<br><br>
-<hr>
-<p id='autoupdate'></p><center><img src='https://github.com/Squidly271/ca.update.applications/raw/master/source/ca.update.applications/usr/local/emhttp/plugins/ca.update.applications/images/ca.update.applications.png' height='96px' width='96px'></center>
-<font color='purple' size='4'><center>CA Auto Update Module</center></font>
-<font color="red" size="3">Auto Update Settings</font><br><br>
-Within the Community Applications section of <em>Settings</em> there is a program called "Auto Update Settings".  This module will allow your unRaid server to automatically update any or all of the plugin or docker applications currently installed to the latest versions as they become available without any user intervention.<br>
-<br>
-There are two separate sections within this module: Plugin Settings and Docker Settings.<br><br>
-On both settings screens, you have the options to:<br>
-<br> 
-<font color='purple'><b>Send Notifications On Update</b></font><br> 
-Defaults to Yes.  This will send a notification whenever an application has been updated<br>
-<br>
-<font color='purple'><b>Automatically update All Plugins|Dockers</b></font><br>
-Defaults to No.  When set to yes, all applications for that section (plugins / dockers) will be automatically updated.  When set to No, a list of the currently installed applications will appear and you will have the option to individually set them to auto update or not.<br>
-<br>
-<font color='purple'><b>Update Frequency</b></font><br>
-Set this to whatever time frame you want the module to check for (and install) the updates.  Available options are Disabled, Daily, Weekly, Monthly and custom.  When set to Daily/Weekly/Monthly, you should fill out appropriately the Hour, Minute, etc that the check will actually be performed at.  Setting this to "Custom" will allow you to manually enter a standard cron entry for when to perform the updates for greater flexibility (wikipedia: <a href='https://en.wikipedia.org/wiki/Cron'>Cron</a>)<br>
-<br>
-Additionally, the plugin update settings also has this additional entry:<br>
-<font color='purple'><b>Delay In Days Before Updating Applications</b></font><br>
-Set this to the number of days after an application has been updated before autoupdating the application.  (Setting this to 0 will update the applications the same day they are released)  Defaults to 3 days. 
- <br>
-<br><font color='red'><strong>Note:</strong></font> Community Applications will NOT automatically install any unRaid OS updates.
-<br>
-<p id='dockerAdvancedControl'></p><font color='red' size='3'><strong>Advanced Docker Control</strong></font><br>
-Optionally, CA Auto Update supports running custom stop and start scripts for docker applications.  These scripts will be executed <em>prior</em> to stopping an application and <em>after</em> starting an application.<br><br>
-To use this feature, create the following file(s) on your flash drive: (They are executed in order if they exist)<br><br><br>
-<table>
-<tr><td><b>/boot/config/plugins/ca.update.applications/scripts/stopping/stop_all</b></td><td>This script will be executed whenever <em>any</em> docker application is being updated (prior to updating)</td></tr>
-<tr><td><b>/boot/config/plugins/ca.update.applications/scripts/stopping/{nameOfContainer}</b></td><td>This script will be executed whenever <em>{nameOfContainer}</em> is being updated (prior to updating)</td></tr>
-<tr><td><b>/boot/config/plugins/ca.update.applications/scripts/starting/{nameOfContainer}</b></td><td>This script will be executed whenever <em>{nameOfContainer}</em> has been updated</td></tr>
-<tr><td><b>/boot/config/plugins/ca.update.applications/scripts/starting/start_all</b></td><td>This script will be executed whenever <em>any</em> container has been updated</td></tr>
-</table>
-<hr><p id='backup'></p>
-<br>
-<p id='backupSettings'></p><center><img src='https://github.com/Squidly271/ca.backup/raw/master/source/ca.backup/usr/local/emhttp/plugins/ca.backup/images/ca.backup.png' height='96px' width='96px'></center>
-<font color='purple' size='4'><center>CA Appdata Backup/Restore Module</center></font>
-<font color='red' size='3'>Backup Appdata Settings</font><br>
-<br>
-Within the Community Applications section of <em>Settings</em> there is a program called "Backup Appdata Settings".  This module will allow you to either manually or on a schedule backup your application's appdata folders from a cache-only share to the parity protected array.
-<br>
-The settings are as follows:
-<br>
-<font color="purple"><b>Appdata Share (Source)</b></font><br>
-This is the cache-only share where all of your docker appdata is stored (usually /mnt/cache/appdata).  Note that if your appdata folder is <em>not</em> listed here, then this module will not function for you.
-<br>
-<font color="purple"><b>Save to Disk#</b></font><br>
-This sets which disk on your array to save the backup to (see notes below)
-<br>
-<font color="purple"><b>Destination Share</b></font><br>
-This sets which share (and subfolder if chosen) to store the backup to (see notes below)
-<br>
-<font color="purple"><b>Excluded Folders</b></font><br>
-Use the excluded folder browser to select which folders within your appdata share to <em>not</em> include in the backup (ie: if you are also storing VM images within the appdata folder)
-<br>
-<font color='purple'><b>Backup USB Flash Drive</b></font><br>
-This will backup up your USB flash drive.  Settings are (Same folder as appdata, separate folder, don't backup).  An additional file is automatically added to the config folder of the backup (and on the flash drive) called DISK ASSIGNMENTS.txt)  This contains all of the drive assignments (Parity, cache, disk1, etc) current as of the backup time.  /boot/config/super.dat is renamed just in case of a hardware change happening inbetween backups (ie: the parity disk at the backup was exchanged and the original placed into the array) which can cause data loss.<br>
-Also, note that in the case of the destination being placed on the array (pretty much guaranteed in the case of same folder as appdata), then in the event of a complete flash failure, you cannot gain access to any of the backed up settings until you assign all of the disks back.  For the ultimate in protection, use the unassigned devices plugin and set the destination to be a SMB share from your desktop computer.
-<br>
-<font color="purple"><b>Notification Settings</b></font><br>
-This determines under what circumstances a notification (set up via Settings - Notification Settings) is sent:  (Disabled, Start And Stop, Completion Only, Errors Only)
-<br>
-<font color="purple"><b>Path To Custom Stop / Start Script</b></font><br>
-These two options allow you to run a custom script to run prior to the backup (and after the backup is completed) in order to perform any maintenance tasks, shut down plugins (if you want them backed up), etc
-<br>
-<font color='purple'><b>Update Applications On Restart</b></font><br>
-Selecting Yes here will automatically install any available updates for the applications that are made available by the application template authors.  Note that this option <em>requires</em> CA Auto Update Applications to be installed
-<br>
-<font color="purple"><b>Rsync Options</b></font><br>
-This entry will allow you to add any custom options to the rsync command that the backup operation uses.  If you don't know what you're doing, don't touch this entry!
-<br>
-<font color="purple"><b>Run Scripts in place of or in addition to</b></font><br>
-Setting this to "in place of" effectively disabled the backup command, and allows the custom scripts to perform the actual backup.  Note that CA will still automatically stop and start the docker applications for you.
-<br>
-<font color="purple"><b>Scheduled Backup Frequency</b></font><br>
-Set these options to determine how often to run a scheduled backup operation (or include a custom CRON entry to manually make the schedule yourself)
-<br>
-<font color="purple"><b>Put backups into separate dated subfolders?</b></font><br>
-Setting this will create a separate folder (date and time) each time you run the backup.
-<br>
-<font color="purple"><b>Delete backups after how many days?</b></font><br>
-This is available when creating separate folders for each backup.  It will automatically delete backups that are older than the number of days you specify.  After a successful backup, then the old backups will be deleted.   In the event of a failed backup, no old backup sets will be deleted.
-<br>
-<font color="purple"><b>Attempt faster rsyncs?</b></font><br>
-This option is available when creating separate foldersfor each backup.  When it is set to "no (default)", the backup (rsync) command will have to copy ALL of the files over.  If you set it to "yes", then prior to copying, one of the backups which are slated to be deleted will be renamed to be the same date and time as the backup that is about to run.  This will allow the rsync command to only have to copy the files which are changed over.  This can result in significantly faster backup times.  The downside is that in the event of the backup failing (for whatever reason), you will have lost the previously made backup.
-<br>
-NOTES:
-<br>
-<font size='3'><b>All files within your chosen destination folder will be deleted during a backup process</b></font>
-<br>
-When using unRaid 6.1.x, destinations have to be sent to a share <b>and</b> to a disk.  The reasons for this is due to hardlinks (which is a subject unto itself), but the net result is that the only way to guarantee a successful backup / restore is to send the backup to a disk share.
-<br>Using 6.2+, destinations can be set to a user share (select <b>user</b> as the disk #), as 6.2 properly supports hardlinks on user shares.  The share you select however should be set to not use the cache drive however.
-<br>
-<hr>
-<p id='restoreAppdata'></p>
-<font color='red' size='3'>Restoring your appdata</font><br>
-<br>
-In the case of a cache drive failure, the steps required to restore your docker apps back to operational status is as follows:
-<br>
-<list>
-<li>Replace the cache drive</li>
-<li>Recreate the docker.img file via Settings - Docker Settings</li>
-<li>Go to Settings - CA section - Backup/Restore</li>
-<li>Select the restore tab</li>
-<li>Verify the source and destination which appear and select a backup set to restore</li>
-<li>After its finished, ideally you should also restart your server so that all changes made will take effect 100%</li>
-</list>
-<br>
-The restore module will then copy the backup set back to your appdata share (and automatically set it to be cache-only).  Additionally, it will also delete any files which may have somehow been written to the array during the cache drive failure.
-<br>
-<br>
-<hr>
-<p id='deleteAppdata'></p><center><img src='https://github.com/Squidly271/ca.cleanup.appdata/raw/master/source/ca.cleanup.appdata/usr/local/emhttp/plugins/ca.cleanup.appdata/images/ca.cleanup.appdata.png' height='96px' width='96px'></center>
-<font color='purple' size='4'><center>CA Cleanup Appdata Module</center></font>
-
-<font color='red' size='3'>Cleanup Appdata</font><br>
-<br>
-If you have been using docker for a while, and installing and uninstalling various applications, your appdata share probably has a bunch of old folders and files which are no longer needed, and hard to delete due to their permission settings.  The Cleanup Appdata modules (Settings -> Community Applications section) will determine which appdata folders (based upon your previously installed docker applications) are no longer needed and then prompt you to delete them.
-This module will NOT touch any appdata folder which may be used for VMs, plugins, etc
-<hr>
-<p id='dockerAutostart'></p><center><img src='https://github.com/Squidly271/ca.docker.autostart/raw/master/source/ca.docker.autostart/usr/local/emhttp/plugins/ca.docker.autostart/images/ca.docker.autostart.png' height='96px' width='96px'></center>
-<font color='purple' size='4'><center>Docker Autostart Manager Module</center></font><br>
-<br>
-The docker autostart manager module will extends the autostart abilities of docker applications.  Namely, you can specify the exact order in which applications start (ie: Start app "A" then app "C" then app "B") instead of unRaid starting A, B, C in order.  Additionally, you can also specify startup delays (in seconds) for each application.<br>
-<br>
-Access this module by going to the Docker Tab (Docker Autostart Manager section)<br>
-<br>
-<center><img src='http://i46.photobucket.com/albums/f109/squidaz/Untitled_zpsuxxpfolf.png' width='800px'></center>
-<br>
-Any of the apps listed on the left hand side will be managed by unRaid (and start all at once if the autostart is checked off).  Items on the right will be managed by this plugin.<br>
-<br>
-Click on any of the applications and then use the arrow buttons to move them from side to side (or up and down on the right pane), and enter in the appropriate startup delay.
-<br><br>
-Note that any of the applications that are managed by this module will appear on unRaid's standard docker tab as having "autostart" disabled.  This is normal.
-<br>
-<hr>
-<br>
-<font color='purple' size='4'><center>Other</center></font>
-<p id='othersettings'></p>
 <font color="red" size="3">Other Notes</font><br>
 <br>
 Community Applications (and its predecessor Community Repositories) introduced a number of additional XML tags in order to perform it's magic.  Any application / template author and/or maintainer should check out the list of schema additions here:  <a href='http://lime-technology.com/forum/index.php?topic=40299.0' target='_blank'>http://lime-technology.com/forum/index.php?topic=40299.0</a>
@@ -353,7 +195,7 @@ Depending upon which browser you are using, there may be a slight delay (~1-2 se
       </tr>
     </table></center>
     <br>
-    <center><em><font size='1'>Copyright 2015-2016 Andrew Zawadzki</font></em></center>
+    <center><em><font size='1'>Copyright 2015-2017 Andrew Zawadzki</font></em></center>
     <center><a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7M7CBCVU732XG' target='_blank'><img src='https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif'></a></center>
     <br><center><a href='http://lime-technology.com/forum/index.php?topic=40262.0' target='_blank'>Plugin Support Thread</a></center>
 </div>
@@ -366,6 +208,4 @@ Beer costs money...  If you like CA (or any of my other plugins) feel free to co
 <br>
 
 <strong>For any support issues with this plugin, go to <a href='http://lime-technology.com/forum/index.php?topic=40262.0' target='_blank'>Plugin Support Page</a>
-<a href="#" class="back-to-top" style="display: inline;">
-<img src='https://github.com/Squidly271/community.applications/raw/master/source/community.applications/usr/local/emhttp/plugins/community.applications/images/up.png' style='width:50px;height:50px' href="#" class="back-to-top"></img>
-</a>
+
